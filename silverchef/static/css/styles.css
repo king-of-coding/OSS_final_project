@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fddf71;
+} /* 사이트 배경 */
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} /* 레시피 파인더 컨테이너 */
+
+#title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} /* 제목과 로고 컨테이너 */
+
+#title {
+    text-align: left;
+    font-size: 48px;
+    font-weight: bold;
+} /* 레시피 파인더 글씨 */
+
+#logo {
+    width: 100px;
+    height: auto;
+} /* 로고 이미지 */
+
+#input {
+    margin-top: 20px;
+} /* 검색란 */
+
+#recipes {
+    margin-top: 20px;
+} /* 레시피 결과 */
+
+.recipe {
+    border: 1px solid #435db8;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #c9f139;
+} /* 각 레시피 결과 창 */
+
+.recipe img {
+    max-width: 100%;
+    height: auto;
+} /* 레시피 사진 */
+
+.recipe a {
+    color: rgb(157, 0, 255);
+    text-decoration: none;
+} /* 레시피 링크 */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <article id="content">
+                <section id="main">
+                    <img src="{{ url_for('static', filename='imgs_company/main_img.png') }}" alt="main img">
+                </section>
+                <section>
+                    <ul id="banner">
+                        <li><a href="#"><img src="{{ url_for('static', filename='imgs_company/bannre1.png') }}" alt="banner1"></a></li>
+                        <li><a href="#"><img src="{{ url_for('static', filename='imgs_company/bannre2.png') }}" alt="banner2"></a></li>
+                    </ul>
+                </section>
+            </article>
+        </header>
+
+        <div id="container" class="container">
+            <div id="title-container">
+                <h1 id="title">레시피 검색</h1>
+                <img id="logo" src="{{ url_for('static', filename='imgs_company/logo.png') }}" alt="logo">
+            </div>
+            <label for="recipe-input">레시피를 검색하세요:</label>
+            <input type="text" id="recipe-input" placeholder="레시피 이름 입력">
+            <button id="search-button" onclick="translateAndSearch()">검색</button>
+            <div id="recipes"></div>
+        </div>
+
+        <footer>
+            <img src="{{ url_for('static', filename='imgs_company/address.png') }}" alt="address">
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script>
+        function translateAndSearch() {
+            const recipeNameKo = document.getElementById('recipe-input').value;
+            if (recipeNameKo) {
+                fetch(`/translate_and_search?recipe_name_ko=${recipeNameKo}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const recipesDiv = document.getElementById('recipes');
+                        recipesDiv.innerHTML = '';
+                        data.recipes.forEach((recipe, index) => {
+                            const recipeDiv = document.createElement('div');
+                            recipeDiv.className = 'recipe';
+                            recipeDiv.innerHTML = `
+                                <div><strong>${index + 1}. ${recipe.label}</strong></div>
+                                <div><img src="${recipe.image}" alt="${recipe.label}"></div>
+                                <div><a href="${recipe.url}" target="_blank">${recipe.url}</a></div>
+                            `;
+                            recipesDiv.appendChild(recipeDiv);
+                        });
+                    });
+            }
+        }
+    </script>
+</body>
+</html>
+
