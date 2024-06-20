@@ -35,3 +35,10 @@ https://www.edamam.com/
 
 app.py가 flask 어플리케이션 파일이므로 가상환경에서 app.py 실행 후에
 http://127.0.0.1:5000 의 주소로 가면 웹 페이지에 접속할 수 있습니다.
+
+
+프로젝트에 사용된 이미지의 출처
+-------------------------
+- banner1.png (독거노인종합지원센터) : https://edu.1661-2129.or.kr/html/images/main/logo_m1200.jpg
+- background.jpg(배경화면 음식 사진 freepik) : https://img.freepik.com/free-photo/top-view-table-full-food_23-2149209265.jpg?t=st=1718881640~exp=1718885240~hmac=095ecff47c28b2cfdbe26195a958f348336faa9c80e48ab8e14e52c719e7e559&w=996
+- banner2.png (한국노인종합복지관협회) : https://lh6.googleusercontent.com/proxy/iGbJiYOb2irnntgnHsGbxVIlRDM_wabzvXMjbTZaPtimdcqg7a2m8U1Xki23vU0k0Rz3cZubI7QMYNuO9n3pWS9MfrwKPsxCKg
