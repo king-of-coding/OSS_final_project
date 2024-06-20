@@ -24,16 +24,16 @@ static 폴더 내에는 웹의 디자인과 관련된 css 파일과 js 파일 �
 
 
 
-app.py의 실행을 위해서는 다음의 모듈들이 우선적으로 설치될 필요가 있습니다.
+1. python이 설치되어있는지 먼저 확인 후에
+2. 가상환경을 생성하고 활성화합니다.
+3. app.py의 실행을 위해서 필요한 다음의 패키지들을 설치합니다.
 - pip install flask
 - pip install googletrans==3.1.0a0 (에러가 나지 않는 버전)
 - pip install requests
 - pip install waitress
-
-API 사용을 위한 app id와 app key는 홈페이지에서 부여받을 수 있습니다.
+4. API 사용을 위한 app id와 app key는 홈페이지에서 부여받을 수 있습니다.
 https://www.edamam.com/
-
-app.py가 flask 어플리케이션 파일이므로 가상환경에서 app.py 실행 후에
+5. app.py가 flask 어플리케이션 파일이므로 가상환경에서 app.py 실행 후에
 http://127.0.0.1:5000 의 주소로 가면 웹 페이지에 접속할 수 있습니다.
 
 
