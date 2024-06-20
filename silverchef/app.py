@@ -1,5 +1,4 @@
 #silver chef 백엔드
-
 from flask import Flask, request, jsonify, render_template, url_for
 from googletrans import Translator
 import requests

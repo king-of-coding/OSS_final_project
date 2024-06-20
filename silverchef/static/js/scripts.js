@@ -1,23 +1,34 @@
 document.getElementById('search-button').addEventListener('click', async () => {
-    const recipeNameKo = document.getElementById('recipe-input').value;
-    if (recipeNameKo) {
-        const response = await fetch(`/translate_and_search?recipe_name=${encodeURIComponent(recipeNameKo)}`);
-        const recipes = await response.json();
-        displayRecipes(recipes);
+    const recipeInput = document.getElementById("recipe-input").value;
+
+    if (recipeInput) {
+        try {
+            const response = await fetch(`/translate_and_search?recipe_name_ko=${encodeURIComponent(recipeInput)}`);
+            const data = await response.json();
+            displayRecipes(data.recipes);
+        } catch (error) {
+            console.error("Error:", error);
+        }
     }
 });
 
 function displayRecipes(recipes) {
-    const recipeList = document.getElementById('recipe-list');
-    recipeList.innerHTML = '';
-    recipes.forEach((recipe, index) => {
-        const recipeDiv = document.createElement('div');
-        recipeDiv.className = 'recipe';
-        recipeDiv.innerHTML = `
-            <h2>${index + 1}. ${recipe.label}</h2>
-            <img src="${recipe.image}" alt="${recipe.label}">
-            <p><a href="${recipe.url}" target="_blank">View Recipe</a></p>
-        `;
-        recipeList.appendChild(recipeDiv);
-    });
+    const recipesContainer = document.getElementById("recipes");
+    recipesContainer.innerHTML = "";
+
+    if (recipes && recipes.length > 0) {
+        recipes.forEach((recipe, index) => {
+            const recipeDiv = document.createElement("div");
+            recipeDiv.className = "recipe";
+            recipeDiv.innerHTML = `
+                <h3>${index + 1}. ${recipe.label}</h3>
+                <img src="${recipe.image}" alt="${recipe.label}">
+                <p><a href="${recipe.url}" target="_blank">레시피를 보려면 이곳을 클릭하세요</a></p>
+            `;
+            recipesContainer.appendChild(recipeDiv);
+        });
+    } else {
+        recipesContainer.textContent = "No recipes found.";
+    }
 }
+
