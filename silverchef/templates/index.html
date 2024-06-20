@@ -17,13 +17,9 @@
         <header>
             <article id="content">
                 <section id="main">
-                    <img src="{{ url_for('static', filename='imgs_company/main_img.png') }}" alt="main img">
-                </section>
-                <section>
-                    <ul id="banner">
-                        <li><a href="#"><img src="{{ url_for('static', filename='imgs_company/banner1.png') }}" alt="banner1"></a></li>
-                        <li><a href="#"><img src="{{ url_for('static', filename='imgs_company/banner2.png') }}" alt="banner2"></a></li>
-                    </ul>
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename='imgs_company/main_img.png') }}" width="1500" alt="main img">
+                    </div>
                 </section>
             </article>
         </header>
@@ -38,9 +34,14 @@
             <button id="search-button" onclick="translateAndSearch()">검색</button>
             <div id="recipes"></div>
         </div>
-
+        <section>
+            <ul id="banner">
+                <li><a href="http://www.1661-2129.or.kr/main/index.do" target="_blank"><img src="{{ url_for('static', filename='imgs_company/banner1.png') }}" width="250" alt="banner1"></a></li>
+                <li><a href="http://www.kaswcs.or.kr/" target="_blank"><img src="{{ url_for('static', filename='imgs_company/banner2.png') }}" width="250" alt="banner2"></a></li>
+            </ul>
+        </section>
         <footer>
-            <img src="{{ url_for('static', filename='imgs_company/address.png') }}" alt="address">
+            <h1 id="reference">이미지 출처: "https://kr.freepik.com/free-photo/top-view-table-full-food_21088404.htm#query=%EC%9D%8C%EC%8B%9D%20%EC%82%AC%EC%A7%84&position=30&from_view=keyword&track=ais_user&uuid=f7a68124-a7d7-4924-b12f-e28ff2f4c6de" 출처 freepik</h1>
         </footer>
     </div>
 

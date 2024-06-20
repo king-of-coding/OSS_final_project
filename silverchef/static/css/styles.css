@@ -5,6 +5,7 @@ body {
     /* 배경 이미지는 HTML에서 설정합니다. */
 } /* 사이트 배경 */
 
+
 /* Other styles remain the same */
 #container {
     max-width: 800px;
@@ -53,7 +54,8 @@ body {
 
 #recipes {
     margin-top: 20px;
-    font-size: 18px; /* 레시피 결과 글씨 키움 */
+    font-size: 18px;/* 레시피 결과 글씨 키움 */
+    align-items: center; 
 } /* 레시피 결과 */
 
 .recipe {
@@ -76,3 +78,19 @@ body {
     font-size: 18px; /* 레시피 링크 글씨 키움 */
 } /* 레시피 링크 */
 
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    list-style-type: none;
+    padding: 0;
+} /* 배너 컨테이너 */
+
+#banner li {
+    margin: 0 10px;
+} /* 배너 항목 간의 간격 */
+
+#reference {
+    font-size: 9px;
+}
