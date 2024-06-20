@@ -25,7 +25,7 @@ static 폴더 내에는 웹의 디자인과 관련된 css 파일과 js 파일 �
 
 
 1. python이 설치되어있는지 먼저 확인 후에
-2. 가상환경을 생성하고 활성화합니다.
+2. 가상환경을 생성하고 활성화합니다. ex) anaconda
 3. app.py의 실행을 위해서 필요한 다음의 패키지들을 설치합니다.
 - pip install flask
 - pip install googletrans==3.1.0a0 (에러가 나지 않는 버전)
